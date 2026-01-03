@@ -37,4 +37,20 @@ print("Suspicious Langauge Indicators found: ", found_suspicious_words)
 risk_decision = risk_analysis(found_suspicious_words)
 print(risk_decision)
 
+def extract_links(text):
+    words = text.split()
+    links = []
+    for word in words:
+        clear_word = word.strip("().,")
+        if clear_word.startswith("http"):
+            links.append(clear_word)
     
+    return links
+
+links = extract_links(text)
+if links:
+    print("LINKS HAVE BEEN DETECTED IN THE MAIL")
+    for link in links:
+        print(" -",link)
+else:
+    print("NO LINKS DETECTED IN THE MAIL")

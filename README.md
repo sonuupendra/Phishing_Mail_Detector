@@ -67,4 +67,4 @@ Phase 6: Domain-level analysis (planned)
 3. Run the detector script:
 
 ```bash
-python detector.py
+```python detector.py
